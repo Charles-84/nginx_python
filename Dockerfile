@@ -23,5 +23,8 @@ WORKDIR /home/container
 COPY --chown=container:container ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+COPY --chown=container:container ./start.sh /start.sh
+RUN chmod +x /start.sh
+
 # Configuration de l'exécution
 CMD ["/bin/bash", "/entrypoint.sh"]
