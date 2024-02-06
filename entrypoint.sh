@@ -5,10 +5,6 @@ sleep 1
 # Changement vers le répertoire de l'utilisateur
 cd /home/container
 
-# Rend l'adresse IP interne du Docker disponible aux processus
-INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
-export INTERNAL_IP
-
 # Affiche la version actuelle de Python
 python --version
 
