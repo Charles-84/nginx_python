@@ -2,6 +2,10 @@
 # Un petit délai pour s'assurer que tout est prêt pour le démarrage
 sleep 1
 
+# Make internal Docker IP address available to processes.
+INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
+export INTERNAL_IP
+
 # Changement vers le répertoire de l'utilisateur
 cd /home/container
 
